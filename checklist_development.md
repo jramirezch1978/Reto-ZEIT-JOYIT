@@ -22,7 +22,7 @@
 - [X] CRUD completo vía API para proveedores
 - [X] CRUD completo vía API para usuarios
 - [X] Endpoints para creación de usuarios
-- [ ] Endpoints para login/autenticación y endpoints protegidos
+- [X] Endpoints para login/autenticación y endpoints protegidos
 - [X] Capa de acceso a datos separada
 - [X] Capa de lógica de negocio separada (servicios)
 - [X] Carga inicial de usuario admin solo si no existe
@@ -31,4 +31,4 @@
 - [X] .gitignore configurado para evitar subir archivos sensibles
 - [X] Código limpio y mantenible
 - [ ] Pruebas unitarias para acceso a datos, lógica de negocio y endpoints
-- [ ] Dockerfile para ejecución local (opcional, recomendado)
+- [X] Dockerfile para ejecución local (opcional, recomendado)
