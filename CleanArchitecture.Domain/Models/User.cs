@@ -13,6 +13,6 @@ namespace CleanArchitecture.Domain.Models
         public string Role { get; set; } // ADMIN, USER
         public bool IsActive { get; set; }
         public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
     }
 } 

@@ -17,9 +17,9 @@ namespace CleanArchitecture.Domain.Models
         public string Country { get; set; }
         public string PostalCode { get; set; }
         public bool IsActive { get; set; }
-        public int? CreatedById { get; set; }
-        public User? CreatedBy { get; set; }
+        public int CreatedById { get; set; }
+        public User CreatedBy { get; set; }
         public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
     }
 } 

@@ -25,9 +25,17 @@ public class AuthController : ControllerBase
     public async Task<IActionResult> Login([FromBody] LoginRequest request)
     {
         var user = await _userService.GetByUsernameOrEmailAsync(request.UsernameOrEmail);
-        if (user == null || !BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
+        if (user == null)
         {
-            return Unauthorized(new { message = "Credenciales inválidas" });
+            return Unauthorized(new { message = "Usuario no encontrado" });
+        }
+        if (string.IsNullOrEmpty(user.PasswordHash))
+        {
+            return Unauthorized(new { message = "El hash de la contraseña está vacío o nulo" });
+        }
+        if (!BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
+        {
+            return Unauthorized(new { message = "Contraseña incorrecta", passwordPlano = request.Password, hashEnBD = user.PasswordHash });
         }
 
         var tokenHandler = new JwtSecurityTokenHandler();
@@ -47,5 +55,12 @@ public class AuthController : ControllerBase
         var jwt = tokenHandler.WriteToken(token);
 
         return Ok(new { token = jwt, user = new { user.Id, user.Username, user.Email, user.Role } });
+    }
+
+    [HttpPost("hash-password")]
+    public IActionResult HashPassword([FromBody] string password)
+    {
+        var hash = BCrypt.Net.BCrypt.HashPassword(password);
+        return Ok(new { hash });
     }
 } 

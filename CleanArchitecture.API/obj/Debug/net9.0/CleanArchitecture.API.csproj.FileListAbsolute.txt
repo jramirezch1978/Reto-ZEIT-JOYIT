@@ -43,3 +43,11 @@ E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\bin\Debug\net9.0\Npgsql.dll
 E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
 E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
