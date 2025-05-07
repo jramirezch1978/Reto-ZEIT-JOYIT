@@ -1,11 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using CleanArchitecture.Application.Services;
 using CleanArchitecture.Domain.Models;
+using CleanArchitecture.API.Filters;
 
 namespace CleanArchitecture.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
+[ServiceFilter(typeof(ActiveUserRequirementFilter))]
 public class UserController : ControllerBase
 {
     private readonly UserService _userService;

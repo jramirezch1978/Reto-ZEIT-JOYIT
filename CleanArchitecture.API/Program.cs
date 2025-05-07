@@ -24,8 +24,14 @@ builder.Services.AddScoped<DataLoader>();
 builder.Services.AddScoped<CleanArchitecture.Application.Services.UserService>();
 builder.Services.AddScoped<CleanArchitecture.Application.Services.PartnerService>();
 
+// Register ActiveUserRequirementFilter
+builder.Services.AddScoped<CleanArchitecture.API.Filters.ActiveUserRequirementFilter>();
+
 // Configuración JWT
-var jwtKey = builder.Configuration["Jwt:Key"] ?? "SuperSecretKey12345";
+var jwtKey = builder.Configuration["Jwt:Key"];
+if (string.IsNullOrEmpty(jwtKey))
+    throw new InvalidOperationException("La clave JWT no está configurada en appsettings.json (Jwt:Key)");
+    
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -76,6 +82,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
