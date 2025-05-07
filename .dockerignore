@@ -1,0 +1,31 @@
+# Archivos y directorios de Git
+.git
+.gitignore
+
+# Archivos de Visual Studio
+.vs/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Directorios de compilación
+bin/
+obj/
+**/bin/
+**/obj/
+
+# Archivos de configuración local
+appsettings.Development.json
+*.Development.json
+
+# Archivos de Docker
+Dockerfile
+.dockerignore
+
+# Archivos de logs
+*.log
+
+# Archivos temporales
+*.tmp
+*.temp 

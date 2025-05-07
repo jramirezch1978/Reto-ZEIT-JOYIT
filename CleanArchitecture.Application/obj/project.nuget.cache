@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "58RLtd79Erg=",
+  "dgSpecHash": "Y7SPPP25NP0=",
   "success": true,
   "projectFilePath": "E:\\Work\\Retos\\Reto ZEIT-JOYIT\\CleanArchitecture.Application\\CleanArchitecture.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Jhonny R\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

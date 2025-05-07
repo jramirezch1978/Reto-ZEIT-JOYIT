@@ -24,7 +24,7 @@
 - [X] Endpoints para creación de usuarios
 - [ ] Endpoints para login/autenticación y endpoints protegidos
 - [X] Capa de acceso a datos separada
-- [ ] Capa de lógica de negocio separada (servicios)
+- [X] Capa de lógica de negocio separada (servicios)
 - [X] Carga inicial de usuario admin solo si no existe
 - [X] Campo updated_at es null en la creación inicial
 - [X] Credenciales separadas de la cadena de conexión
@@ -32,4 +32,3 @@
 - [X] Código limpio y mantenible
 - [ ] Pruebas unitarias para acceso a datos, lógica de negocio y endpoints
 - [ ] Dockerfile para ejecución local (opcional, recomendado)
-- [ ] Dockerfile (opcional, pero suma puntos)

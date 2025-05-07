@@ -98,6 +98,7 @@
       },
       "CleanArchitecture.Application/1.0.0": {
         "dependencies": {
+          "BCrypt.Net-Next": "4.0.3",
           "CleanArchitecture.Domain": "1.0.0"
         },
         "runtime": {
