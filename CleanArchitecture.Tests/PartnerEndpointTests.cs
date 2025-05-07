@@ -6,20 +6,20 @@ using CleanArchitecture.API;
 
 namespace CleanArchitecture.Tests;
 
-public class ProviderEndpointTests : IClassFixture<WebApplicationFactory<Program>>
+public class PartnerEndpointTests : IClassFixture<WebApplicationFactory<Program>>
 {
     private readonly WebApplicationFactory<Program> _factory;
 
-    public ProviderEndpointTests(WebApplicationFactory<Program> factory)
+    public PartnerEndpointTests(WebApplicationFactory<Program> factory)
     {
         _factory = factory;
     }
 
     [Fact]
-    public async Task GetProviders_ReturnsSuccessStatusCode()
+    public async Task GetPartners_ReturnsSuccessStatusCode()
     {
         var client = _factory.CreateClient();
-        var response = await client.GetAsync("/api/providers");
+        var response = await client.GetAsync("/api/Partners");
         Assert.True(response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Unauthorized);
     }
 } 

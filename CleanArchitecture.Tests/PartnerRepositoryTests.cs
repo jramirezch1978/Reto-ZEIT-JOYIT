@@ -8,16 +8,16 @@ using CleanArchitecture.Infrastructure.Data;
 
 namespace CleanArchitecture.Tests;
 
-public class UserRepositoryTests
+public class PartnerRepositoryTests
 {
     [Fact]
-    public async Task GetByIdAsync_ReturnsNull_WhenUserDoesNotExist()
+    public async Task GetByIdAsync_ReturnsNull_WhenPartnerDoesNotExist()
     {
         // Arrange
         var mockDbConnection = new Mock<IDbConnection>();
         var mockDatabaseConnection = new Mock<DatabaseConnection>(null!);
         mockDatabaseConnection.Setup(db => db.CreateConnection()).Returns(mockDbConnection.Object);
-        var repo = new UserRepository(mockDatabaseConnection.Object);
+        var repo = new PartnerRepository(mockDatabaseConnection.Object);
         // Act
         var result = await repo.GetByIdAsync(999);
         // Assert
@@ -25,12 +25,12 @@ public class UserRepositoryTests
     }
 
     [Fact]
-    public async Task CreateAsync_ThrowsException_WhenUserIsNull()
+    public async Task CreateAsync_ThrowsException_WhenPartnerIsNull()
     {
         var mockDbConnection = new Mock<IDbConnection>();
         var mockDatabaseConnection = new Mock<DatabaseConnection>(null!);
         mockDatabaseConnection.Setup(db => db.CreateConnection()).Returns(mockDbConnection.Object);
-        var repo = new UserRepository(mockDatabaseConnection.Object);
+        var repo = new PartnerRepository(mockDatabaseConnection.Object);
         await Assert.ThrowsAsync<System.ArgumentNullException>(() => repo.CreateAsync(null!));
     }
 } 
