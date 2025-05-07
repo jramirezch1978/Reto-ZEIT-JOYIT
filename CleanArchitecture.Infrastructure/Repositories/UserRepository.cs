@@ -22,7 +22,7 @@ public class UserRepository : IUserRepository
     {
         using var connection = _dbConnection.CreateConnection();
         return await connection.QuerySingleOrDefaultAsync<User>(
-            "SELECT * FROM usuario WHERE id = @Id",
+            "SELECT id, username, email, password_hash AS PasswordHash, first_name AS FirstName, last_name AS LastName, role, is_active AS IsActive, created_at AS CreatedAt, updated_at AS UpdatedAt FROM usuario WHERE id = @Id",
             new { Id = id }
         );
     }
@@ -31,7 +31,7 @@ public class UserRepository : IUserRepository
     {
         using var connection = _dbConnection.CreateConnection();
         return await connection.QuerySingleOrDefaultAsync<User>(
-            "SELECT * FROM usuario WHERE email = @Email",
+            "SELECT id, username, email, password_hash AS PasswordHash, first_name AS FirstName, last_name AS LastName, role, is_active AS IsActive, created_at AS CreatedAt, updated_at AS UpdatedAt FROM usuario WHERE email = @Email",
             new { Email = email }
         );
     }
@@ -40,7 +40,7 @@ public class UserRepository : IUserRepository
     {
         using var connection = _dbConnection.CreateConnection();
         return await connection.QuerySingleOrDefaultAsync<User>(
-            "SELECT * FROM usuario WHERE username = @Username",
+            "SELECT id, username, email, password_hash AS PasswordHash, first_name AS FirstName, last_name AS LastName, role, is_active AS IsActive, created_at AS CreatedAt, updated_at AS UpdatedAt FROM usuario WHERE username = @Username",
             new { Username = username }
         );
     }
@@ -48,7 +48,7 @@ public class UserRepository : IUserRepository
     public async Task<IEnumerable<User>> GetAllAsync()
     {
         using var connection = _dbConnection.CreateConnection();
-        return await connection.QueryAsync<User>("SELECT * FROM usuario");
+        return await connection.QueryAsync<User>("SELECT id, username, email, password_hash AS PasswordHash, first_name AS FirstName, last_name AS LastName, role, is_active AS IsActive, created_at AS CreatedAt, updated_at AS UpdatedAt FROM usuario");
     }
 
     public async Task<int> CreateAsync(User user)

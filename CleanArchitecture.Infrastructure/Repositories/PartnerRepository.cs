@@ -22,7 +22,24 @@ public class PartnerRepository : IPartnerRepository
     {
         using var connection = _dbConnection.CreateConnection();
         var sql = @"
-            SELECT p.*, u.* 
+            SELECT 
+                p.id, 
+                p.razon_social AS RazonSocial, 
+                p.tax_id AS TaxId, 
+                p.type AS Type, 
+                p.contact_name AS ContactName, 
+                p.contact_email AS ContactEmail, 
+                p.contact_phone AS ContactPhone, 
+                p.address AS Address, 
+                p.city AS City, 
+                p.state AS State, 
+                p.country AS Country, 
+                p.postal_code AS PostalCode, 
+                p.is_active AS IsActive, 
+                p.created_by AS CreatedById, 
+                p.created_at AS CreatedAt, 
+                p.updated_at AS UpdatedAt,
+                u.id, u.username, u.email, u.password_hash AS PasswordHash, u.first_name AS FirstName, u.last_name AS LastName, u.role, u.is_active AS IsActive, u.created_at AS CreatedAt, u.updated_at AS UpdatedAt
             FROM proveedor p 
             LEFT JOIN usuario u ON p.created_by = u.id 
             WHERE p.id = @Id";
@@ -45,7 +62,24 @@ public class PartnerRepository : IPartnerRepository
     {
         using var connection = _dbConnection.CreateConnection();
         var sql = @"
-            SELECT p.*, u.* 
+            SELECT 
+                p.id, 
+                p.razon_social AS RazonSocial, 
+                p.tax_id AS TaxId, 
+                p.type AS Type, 
+                p.contact_name AS ContactName, 
+                p.contact_email AS ContactEmail, 
+                p.contact_phone AS ContactPhone, 
+                p.address AS Address, 
+                p.city AS City, 
+                p.state AS State, 
+                p.country AS Country, 
+                p.postal_code AS PostalCode, 
+                p.is_active AS IsActive, 
+                p.created_by AS CreatedById, 
+                p.created_at AS CreatedAt, 
+                p.updated_at AS UpdatedAt,
+                u.id, u.username, u.email, u.password_hash AS PasswordHash, u.first_name AS FirstName, u.last_name AS LastName, u.role, u.is_active AS IsActive, u.created_at AS CreatedAt, u.updated_at AS UpdatedAt
             FROM proveedor p 
             LEFT JOIN usuario u ON p.created_by = u.id";
         
