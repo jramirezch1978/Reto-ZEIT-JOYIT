@@ -19,7 +19,7 @@ public class PartnerEndpointTests : IClassFixture<WebApplicationFactory<Program>
     public async Task GetPartners_ReturnsSuccessStatusCode()
     {
         var client = _factory.CreateClient();
-        var response = await client.GetAsync("/api/Partners");
+        var response = await client.GetAsync("/api/partner");
         Assert.True(response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Unauthorized);
     }
 } 

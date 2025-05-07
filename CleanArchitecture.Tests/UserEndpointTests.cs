@@ -19,7 +19,7 @@ public class UserEndpointTests : IClassFixture<WebApplicationFactory<Program>>
     public async Task GetUsers_ReturnsSuccessStatusCode()
     {
         var client = _factory.CreateClient();
-        var response = await client.GetAsync("/api/users");
+        var response = await client.GetAsync("/api/user");
         Assert.True(response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Unauthorized);
     }
 } 
