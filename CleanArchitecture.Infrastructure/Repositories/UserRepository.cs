@@ -22,7 +22,7 @@ public class UserRepository : IUserRepository
     {
         using var connection = _dbConnection.CreateConnection();
         return await connection.QuerySingleOrDefaultAsync<User>(
-            "SELECT * FROM users WHERE id = @Id",
+            "SELECT * FROM usuario WHERE id = @Id",
             new { Id = id }
         );
     }
@@ -31,23 +31,38 @@ public class UserRepository : IUserRepository
     {
         using var connection = _dbConnection.CreateConnection();
         return await connection.QuerySingleOrDefaultAsync<User>(
-            "SELECT * FROM users WHERE email = @Email",
+            "SELECT * FROM usuario WHERE email = @Email",
             new { Email = email }
+        );
+    }
+
+    public async Task<User> GetByUsernameAsync(string username)
+    {
+        using var connection = _dbConnection.CreateConnection();
+        return await connection.QuerySingleOrDefaultAsync<User>(
+            "SELECT * FROM usuario WHERE username = @Username",
+            new { Username = username }
         );
     }
 
     public async Task<IEnumerable<User>> GetAllAsync()
     {
         using var connection = _dbConnection.CreateConnection();
-        return await connection.QueryAsync<User>("SELECT * FROM users");
+        return await connection.QueryAsync<User>("SELECT * FROM usuario");
     }
 
     public async Task<int> CreateAsync(User user)
     {
         using var connection = _dbConnection.CreateConnection();
         var sql = @"
-            INSERT INTO users (name, email, password, created_at, updated_at)
-            VALUES (@Name, @Email, @Password, @CreatedAt, @UpdatedAt)
+            INSERT INTO usuario (
+                username, email, password_hash, first_name, last_name,
+                role, is_active, created_at, updated_at
+            )
+            VALUES (
+                @Username, @Email, @PasswordHash, @FirstName, @LastName,
+                @Role, @IsActive, @CreatedAt, @UpdatedAt
+            )
             RETURNING id";
         
         return await connection.QuerySingleAsync<int>(sql, user);
@@ -57,10 +72,14 @@ public class UserRepository : IUserRepository
     {
         using var connection = _dbConnection.CreateConnection();
         var sql = @"
-            UPDATE users 
-            SET name = @Name,
+            UPDATE usuario 
+            SET username = @Username,
                 email = @Email,
-                password = @Password,
+                password_hash = @PasswordHash,
+                first_name = @FirstName,
+                last_name = @LastName,
+                role = @Role,
+                is_active = @IsActive,
                 updated_at = @UpdatedAt
             WHERE id = @Id";
         
@@ -71,7 +90,7 @@ public class UserRepository : IUserRepository
     {
         using var connection = _dbConnection.CreateConnection();
         await connection.ExecuteAsync(
-            "DELETE FROM users WHERE id = @Id",
+            "DELETE FROM usuario WHERE id = @Id",
             new { Id = id }
         );
     }

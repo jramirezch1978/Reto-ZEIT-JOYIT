@@ -21,24 +21,68 @@ public class PartnerRepository : IPartnerRepository
     public async Task<Partner> GetByIdAsync(int id)
     {
         using var connection = _dbConnection.CreateConnection();
-        return await connection.QuerySingleOrDefaultAsync<Partner>(
-            "SELECT * FROM partners WHERE id = @Id",
-            new { Id = id }
+        var sql = @"
+            SELECT p.*, u.* 
+            FROM proveedor p 
+            LEFT JOIN usuario u ON p.created_by = u.id 
+            WHERE p.id = @Id";
+        
+        var partners = await connection.QueryAsync<Partner, User, Partner>(
+            sql,
+            (partner, user) =>
+            {
+                partner.CreatedBy = user;
+                return partner;
+            },
+            new { Id = id },
+            splitOn: "id"
         );
+        
+        return partners.FirstOrDefault();
     }
 
     public async Task<IEnumerable<Partner>> GetAllAsync()
     {
         using var connection = _dbConnection.CreateConnection();
-        return await connection.QueryAsync<Partner>("SELECT * FROM partners");
+        var sql = @"
+            SELECT p.*, u.* 
+            FROM proveedor p 
+            LEFT JOIN usuario u ON p.created_by = u.id";
+        
+        var partnerDict = new Dictionary<int, Partner>();
+        
+        var partners = await connection.QueryAsync<Partner, User, Partner>(
+            sql,
+            (partner, user) =>
+            {
+                if (!partnerDict.TryGetValue(partner.Id, out var partnerEntry))
+                {
+                    partnerEntry = partner;
+                    partnerDict.Add(partner.Id, partnerEntry);
+                }
+                partnerEntry.CreatedBy = user;
+                return partnerEntry;
+            },
+            splitOn: "id"
+        );
+        
+        return partnerDict.Values;
     }
 
     public async Task<int> CreateAsync(Partner partner)
     {
         using var connection = _dbConnection.CreateConnection();
         var sql = @"
-            INSERT INTO partners (name, description, created_at, updated_at)
-            VALUES (@Name, @Description, @CreatedAt, @UpdatedAt)
+            INSERT INTO proveedor (
+                razon_social, tax_id, type, contact_name, contact_email, 
+                contact_phone, address, city, state, country, 
+                postal_code, is_active, created_by, created_at, updated_at
+            )
+            VALUES (
+                @RazonSocial, @TaxId, @Type, @ContactName, @ContactEmail,
+                @ContactPhone, @Address, @City, @State, @Country,
+                @PostalCode, @IsActive, @CreatedById, @CreatedAt, @UpdatedAt
+            )
             RETURNING id";
         
         return await connection.QuerySingleAsync<int>(sql, partner);
@@ -48,9 +92,19 @@ public class PartnerRepository : IPartnerRepository
     {
         using var connection = _dbConnection.CreateConnection();
         var sql = @"
-            UPDATE partners 
-            SET name = @Name,
-                description = @Description,
+            UPDATE proveedor 
+            SET razon_social = @RazonSocial,
+                tax_id = @TaxId,
+                type = @Type,
+                contact_name = @ContactName,
+                contact_email = @ContactEmail,
+                contact_phone = @ContactPhone,
+                address = @Address,
+                city = @City,
+                state = @State,
+                country = @Country,
+                postal_code = @PostalCode,
+                is_active = @IsActive,
                 updated_at = @UpdatedAt
             WHERE id = @Id";
         
@@ -61,7 +115,7 @@ public class PartnerRepository : IPartnerRepository
     {
         using var connection = _dbConnection.CreateConnection();
         await connection.ExecuteAsync(
-            "DELETE FROM partners WHERE id = @Id",
+            "DELETE FROM proveedor WHERE id = @Id",
             new { Id = id }
         );
     }

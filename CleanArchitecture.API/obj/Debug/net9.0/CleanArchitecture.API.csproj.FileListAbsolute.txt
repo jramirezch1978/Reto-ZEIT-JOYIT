@@ -1,4 +1,3 @@
-E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\bin\Debug\net9.0\appsettings.Development.json
 E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\bin\Debug\net9.0\appsettings.json
 E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\bin\Debug\net9.0\CleanArchitecture.API.staticwebassets.endpoints.json
 E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\bin\Debug\net9.0\CleanArchitecture.API.exe
@@ -38,3 +37,9 @@ E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\obj\Debug\net9.0\refint\Clea
 E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\obj\Debug\net9.0\CleanArchitecture.API.pdb
 E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\obj\Debug\net9.0\CleanArchitecture.API.genruntimeconfig.cache
 E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\obj\Debug\net9.0\ref\CleanArchitecture.API.dll
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\bin\Debug\net9.0\BCrypt.Net-Next.dll
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\bin\Debug\net9.0\Dapper.dll
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\bin\Debug\net9.0\Npgsql.dll
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll

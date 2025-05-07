@@ -14,6 +14,9 @@ builder.Services.AddSingleton<DatabaseConnection>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IPartnerRepository, PartnerRepository>();
 
+// Register DataLoader
+builder.Services.AddScoped<DataLoader>();
+
 // Configurar CORS
 builder.Services.AddCors(options =>
 {
@@ -27,6 +30,13 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+// Seed initial data
+using (var scope = app.Services.CreateScope())
+{
+    var dataLoader = scope.ServiceProvider.GetRequiredService<DataLoader>();
+    await dataLoader.SeedDataAsync();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
