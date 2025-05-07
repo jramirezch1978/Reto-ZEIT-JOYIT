@@ -1,0 +1,12 @@
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Domain\bin\Debug\net9.0\CleanArchitecture.Domain.deps.json
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Domain\bin\Debug\net9.0\CleanArchitecture.Domain.dll
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Domain\bin\Debug\net9.0\CleanArchitecture.Domain.pdb
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Domain\obj\Debug\net9.0\CleanArchitecture.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Domain\obj\Debug\net9.0\CleanArchitecture.Domain.AssemblyInfoInputs.cache
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Domain\obj\Debug\net9.0\CleanArchitecture.Domain.AssemblyInfo.cs
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Domain\obj\Debug\net9.0\CleanArchitecture.Domain.csproj.CoreCompileInputs.cache
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Domain\obj\Debug\net9.0\CleanArchitecture.Domain.sourcelink.json
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Domain\obj\Debug\net9.0\CleanArchitecture.Domain.dll
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Domain\obj\Debug\net9.0\refint\CleanArchitecture.Domain.dll
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Domain\obj\Debug\net9.0\CleanArchitecture.Domain.pdb
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Domain\obj\Debug\net9.0\ref\CleanArchitecture.Domain.dll

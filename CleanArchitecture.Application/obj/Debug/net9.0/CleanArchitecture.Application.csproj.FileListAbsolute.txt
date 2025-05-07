@@ -1,0 +1,16 @@
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Application\bin\Debug\net9.0\CleanArchitecture.Application.deps.json
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Application\bin\Debug\net9.0\CleanArchitecture.Application.dll
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Application\bin\Debug\net9.0\CleanArchitecture.Application.pdb
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Application\bin\Debug\net9.0\CleanArchitecture.Domain.dll
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Application\bin\Debug\net9.0\CleanArchitecture.Domain.pdb
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Application\obj\Debug\net9.0\CleanArchitecture.Application.csproj.AssemblyReference.cache
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Application\obj\Debug\net9.0\CleanArchitecture.Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Application\obj\Debug\net9.0\CleanArchitecture.Application.AssemblyInfoInputs.cache
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Application\obj\Debug\net9.0\CleanArchitecture.Application.AssemblyInfo.cs
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Application\obj\Debug\net9.0\CleanArchitecture.Application.csproj.CoreCompileInputs.cache
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Application\obj\Debug\net9.0\CleanArchitecture.Application.sourcelink.json
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Application\obj\Debug\net9.0\CleanArc.03AFA812.Up2Date
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Application\obj\Debug\net9.0\CleanArchitecture.Application.dll
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Application\obj\Debug\net9.0\refint\CleanArchitecture.Application.dll
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Application\obj\Debug\net9.0\CleanArchitecture.Application.pdb
+E:\Work\Retos\Reto ZEIT-JOYIT\CleanArchitecture.Application\obj\Debug\net9.0\ref\CleanArchitecture.Application.dll
