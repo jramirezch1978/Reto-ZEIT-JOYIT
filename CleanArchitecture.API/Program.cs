@@ -1,6 +1,9 @@
 using CleanArchitecture.Domain.Interfaces;
 using CleanArchitecture.Infrastructure.Data;
 using CleanArchitecture.Infrastructure.Repositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +19,30 @@ builder.Services.AddScoped<IPartnerRepository, PartnerRepository>();
 
 // Register DataLoader
 builder.Services.AddScoped<DataLoader>();
+
+// Register UserService and PartnerService
+builder.Services.AddScoped<CleanArchitecture.Application.Services.UserService>();
+builder.Services.AddScoped<CleanArchitecture.Application.Services.PartnerService>();
+
+// Configuración JWT
+var jwtKey = builder.Configuration["Jwt:Key"] ?? "SuperSecretKey12345";
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey)),
+        ClockSkew = TimeSpan.Zero
+    };
+});
 
 // Configurar CORS
 builder.Services.AddCors(options =>
